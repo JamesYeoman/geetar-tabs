@@ -4,56 +4,56 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Collections;
 
+using GeetarTabs.DataTypes;
+using GeetarTabs.Utilities;
+
 namespace GeetarTabs
 {
 	public partial class FormMain : Form
 	{
 		#region Fields
 		protected OpenFileDialog openFile;
-		private string currentFile;
-		private List<List<TabItem>> tabs;
+		private Queue<List<TabItem>> tabs;
 		#endregion
 		#region Constants
 		const string OPEN_FILE_TITLE = "Choose File To Open";
 		const string ERR_MSG = "Invalid Syntax";
-		const string FILE_FILTER = "*.txt";
+		const string FILE_FILTER = "GeetarTabFile files (*.gtf)|*.gtf";
 		#endregion
 
 		public FormMain ( )
 		{
 			InitializeComponent ( );
+			openFile = new OpenFileDialog ( );
 		}
 
-		private void openToolStripMenuItem_Click ( object sender, EventArgs e )
+		private void fileOpenClickHandler ( object sender, EventArgs e )
 		{
 			initOpenFile ( );
 
-			if ( openFile.ShowDialog ( ) == DialogResult.OK)
+			if ( openFile.ShowDialog ( ) == DialogResult.OK )
 			{
-				currentFile = openFile.FileName;
-				using ( StreamReader reader = new StreamReader ( openFile.OpenFile() ))
-				{
+				tabs = FileUtilities.LoadFile ( openFile.FileName );
 
-					try
-					{
-						while ( !reader.EndOfStream )
-						{
-							
-						}
-					}
-					catch(Exception ex)
-					{
-						if(ex is InvalidDataException)
-						{
-							MessageBox.Show ( "Uwu you made a fuckywucky in your file", "Error",
-								MessageBoxButtons.OK, MessageBoxIcon.Error );
-						}
-					}
+				bool isEmpty = tabs.Count == 0;
+				int currentChord = 1;
+				while ( !isEmpty )
+				{
+					List<TabItem> curChord = tabs.Dequeue ( );
+					string curToString = "Chord " + currentChord + "\n";
+
+					foreach ( TabItem tabItem in curChord )
+						curToString += tabItem + "\n";
+
+					MessageBox.Show ( curToString, "Debug", MessageBoxButtons.OK );
+
+					currentChord++;
+					isEmpty = tabs.Count == 0;
 				}
 			}
 		}
 
-		private void initOpenFile()
+		private void initOpenFile ( )
 		{
 			this.openFile.Reset ( );
 			this.openFile.Title = OPEN_FILE_TITLE;
