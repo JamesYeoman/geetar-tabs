@@ -66,12 +66,12 @@
 			// 
 			resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
 			// 
 			// openToolStripMenuItem1
 			// 
 			resources.ApplyResources(this.openToolStripMenuItem1, "openToolStripMenuItem1");
 			this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
+			this.openToolStripMenuItem1.Click += new System.EventHandler(this.fileOpenClickHandler);
 			// 
 			// saveToolStripMenuItem
 			// 
