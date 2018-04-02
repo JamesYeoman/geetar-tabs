@@ -2,7 +2,8 @@
 bin/
 obj/
 Properties/
-*.csproj.*
+*.csproj
+*.csproj.user
 *.sln
 GlobalSuppressions.cs
 App.config
