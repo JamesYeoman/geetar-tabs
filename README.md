@@ -10,5 +10,7 @@ Here is what the file format will be
 `[(string,fret),(string,fret)][(string,fret),(string,fret)]`
 
  + The square brackets (`[` and `]`) indicate chords
- + The round brackets (`(` and `)`) indicate a finger position (referred to in the code as `Tab Items`)
+ + The round brackets (`(` and `)`) indicate a finger position (referred to in the code as `TabItems`)
  + Whitespace will be ignored (so feel free to pad the hell out of your tab definition files)
+ + There is no limit to the number of chords
+ + A blank chord (`[]`) will indicate a gap (for timing purposes)
