@@ -5,7 +5,7 @@
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		private System . ComponentModel . IContainer components = null;
+		private System.ComponentModel.IContainer components = null;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -15,9 +15,9 @@
 		{
 			if ( disposing && ( components != null ) )
 			{
-				components . Dispose ( );
+				components.Dispose ( );
 			}
-			base . Dispose ( disposing );
+			base.Dispose ( disposing );
 		}
 
 		#region Windows Form Designer generated code
@@ -110,14 +110,14 @@
 
 		#endregion
 
-		private System . Windows . Forms . Panel DrawingPanel;
-		private System . Windows . Forms . MenuStrip menuStrip;
-		private System . Windows . Forms . ToolStripMenuItem fileToolStripMenuItem;
-		private System . Windows . Forms . ToolStripMenuItem openToolStripMenuItem;
-		private System . Windows . Forms . ToolStripMenuItem openToolStripMenuItem1;
-		private System . Windows . Forms . ToolStripMenuItem saveToolStripMenuItem;
-		private System . Windows . Forms . ToolStripMenuItem helpToolStripMenuItem;
-		private System . Windows . Forms . ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.Panel DrawingPanel;
+		private System.Windows.Forms.MenuStrip menuStrip;
+		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 	}
 }
 
