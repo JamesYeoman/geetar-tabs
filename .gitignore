@@ -3,7 +3,7 @@ bin/
 obj/
 Properties/
 *.csproj
-*.csproj.user
+*.user
 *.sln
 GlobalSuppressions.cs
 App.config
